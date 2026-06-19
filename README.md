@@ -31,6 +31,14 @@ instala y se compila **dentro** de los contenedores. Solo hace falta
    puede pedir reiniciar).
 2. Abre Podman Desktop y arranca la "Podman machine" la primera vez
    que lo pida.
+   # 1. Crea e inicializa la máquina virtual por primera vez (Descarga la imagen base)
+   ```
+   podman machine init
+   ```
+   # 2. Arranca la máquina virtual que acabas de crear
+   ```
+   podman machine start
+   ```
 3. Clona el repo y entra en la carpeta:
    ```
    git clone <url-del-repo>
