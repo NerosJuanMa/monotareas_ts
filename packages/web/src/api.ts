@@ -12,13 +12,15 @@ export interface UpsertResult {
 	warningStatus: number;
 }
 
+// window.__API_BASE__ = "http://192.168.1.100:3000";
 // El backend corre en su propio contenedor/puerto; en desarrollo con
 // podman-compose se publica en localhost:3000. Se puede sobreescribir
 // definiendo window.__API_BASE__ antes de cargar este script (útil para
 // Capacitor/Tauri, donde la app no corre en "localhost").
-const API_BASE =
+const API_BASE = 
 	(globalThis as unknown as { __API_BASE__?: string }).__API_BASE__
-	?? 'http://localhost:3000';
+	// ?? 'http://localhost:3000';
+	?? 'http://192.168.1.100:3000'; //capacitor necesita la ip real
 
 
 async function request<T> (path: string, init?: RequestInit): Promise<T> {
